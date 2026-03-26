@@ -20,7 +20,9 @@
     --silver: #94a3b8;
     --bronze: #d97706;
   }
+
   * { box-sizing: border-box; margin: 0; padding: 0; }
+
   body {
     background: var(--bg);
     color: var(--text);
@@ -34,12 +36,14 @@
       radial-gradient(ellipse at 20% 50%, rgba(0,212,255,0.05) 0%, transparent 50%),
       radial-gradient(ellipse at 80% 20%, rgba(124,58,237,0.05) 0%, transparent 50%);
   }
+
   header {
     text-align: center;
     padding: 30px 0 10px;
     width: 100%;
-    max-width: 780px;
+    max-width: 700px;
   }
+
   header .badge {
     display: inline-block;
     background: linear-gradient(135deg, #00d4ff22, #7c3aed22);
@@ -52,8 +56,9 @@
     letter-spacing: 2px;
     margin-bottom: 12px;
   }
+
   header h1 {
-    font-size: clamp(26px, 5vw, 44px);
+    font-size: clamp(28px, 6vw, 48px);
     font-weight: 800;
     background: linear-gradient(135deg, #00d4ff, #7c3aed);
     -webkit-background-clip: text;
@@ -62,35 +67,19 @@
     line-height: 1.1;
     margin-bottom: 6px;
   }
-  header p { color: var(--muted); font-size: 14px; }
 
-  /* LIVE DOT */
-  .live-dot {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    color: var(--green);
-    margin-top: 8px;
-  }
-  .live-dot::before {
-    content: '';
-    width: 8px; height: 8px;
-    background: var(--green);
-    border-radius: 50%;
-    animation: pulse 1.4s infinite;
-  }
-  @keyframes pulse {
-    0%,100% { opacity:1; transform:scale(1); }
-    50% { opacity:0.4; transform:scale(0.7); }
+  header p {
+    color: var(--muted);
+    font-size: 14px;
   }
 
+  /* NAV TABS */
   .tabs {
     display: flex;
     gap: 8px;
-    margin: 20px 0 14px;
+    margin: 24px 0 16px;
   }
+
   .tab-btn {
     background: var(--card);
     border: 1px solid var(--border);
@@ -103,116 +92,28 @@
     transition: all 0.2s;
     letter-spacing: 1px;
   }
+
   .tab-btn.active {
     background: linear-gradient(135deg, #00d4ff22, #7c3aed22);
     border-color: var(--accent);
     color: var(--accent);
   }
 
-  /* TWO-COLUMN LAYOUT */
-  .main-layout {
-    display: flex;
-    gap: 16px;
-    width: 100%;
-    max-width: 1100px;
-    align-items: flex-start;
-  }
-  .quiz-col { flex: 1; min-width: 0; }
-  .lb-sidebar {
-    width: 300px;
-    flex-shrink: 0;
-    position: sticky;
-    top: 20px;
-  }
-
-  @media (max-width: 760px) {
-    .main-layout { flex-direction: column; }
-    .lb-sidebar { width: 100%; position: static; }
-  }
-
-  .screen { display: none; width: 100%; }
+  /* SCREENS */
+  .screen { display: none; width: 100%; max-width: 700px; }
   .screen.active { display: block; }
-
-  /* ENTER NAME CARD */
-  .enter-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 36px;
-    text-align: center;
-    margin-bottom: 16px;
-  }
-  .enter-icon { font-size: 48px; margin-bottom: 14px; }
-  .enter-title {
-    font-size: 22px;
-    font-weight: 800;
-    background: linear-gradient(135deg, #00d4ff, #7c3aed);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 8px;
-  }
-  .enter-desc { color: var(--muted); font-size: 13px; margin-bottom: 24px; line-height: 1.6; }
-  .name-row {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 16px;
-  }
-  .big-name-input {
-    background: #0f172a;
-    border: 1.5px solid var(--border);
-    color: var(--text);
-    font-family: 'Syne', sans-serif;
-    font-size: 16px;
-    padding: 12px 18px;
-    border-radius: 10px;
-    outline: none;
-    width: 240px;
-    transition: border-color 0.2s;
-  }
-  .big-name-input:focus { border-color: var(--accent); }
-  .join-btn {
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
-    border: none;
-    color: #fff;
-    font-family: 'Space Mono', monospace;
-    font-size: 13px;
-    padding: 12px 24px;
-    border-radius: 10px;
-    cursor: pointer;
-    letter-spacing: 1px;
-    transition: opacity 0.2s, transform 0.2s;
-  }
-  .join-btn:hover { opacity: 0.88; transform: scale(1.02); }
-  .info-pills {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-  .pill {
-    background: #0f172a;
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 5px 12px;
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    color: var(--muted);
-    letter-spacing: 1px;
-  }
 
   /* QUIZ CARD */
   .quiz-card {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 16px;
-    padding: 26px;
-    margin-bottom: 14px;
+    padding: 28px;
+    margin-bottom: 16px;
     position: relative;
     overflow: hidden;
   }
+
   .quiz-card::before {
     content: '';
     position: absolute;
@@ -220,68 +121,67 @@
     height: 3px;
     background: linear-gradient(90deg, var(--accent), var(--accent2));
   }
-  .player-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: #00d4ff11;
-    border: 1px solid #00d4ff33;
-    border-radius: 20px;
-    padding: 3px 10px;
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    color: var(--accent);
-    margin-bottom: 14px;
-  }
+
   .progress-bar-wrap {
     background: var(--border);
     border-radius: 4px;
-    height: 5px;
-    margin-bottom: 18px;
+    height: 6px;
+    margin-bottom: 20px;
     overflow: hidden;
   }
+
   .progress-bar-fill {
     height: 100%;
     background: linear-gradient(90deg, var(--accent), var(--accent2));
     border-radius: 4px;
     transition: width 0.4s ease;
   }
+
   .q-meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 14px;
+    margin-bottom: 16px;
   }
+
   .q-num {
     font-family: 'Space Mono', monospace;
     font-size: 12px;
     color: var(--accent);
     letter-spacing: 1px;
   }
+
   .q-timer {
     font-family: 'Space Mono', monospace;
-    font-size: 12px;
+    font-size: 13px;
     color: var(--gold);
     background: #f59e0b11;
     border: 1px solid #f59e0b33;
     padding: 3px 10px;
     border-radius: 6px;
   }
+
   .q-text {
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 600;
     line-height: 1.5;
-    margin-bottom: 18px;
+    margin-bottom: 22px;
     color: #f1f5f9;
   }
-  .options { display: flex; flex-direction: column; gap: 9px; }
+
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
   .option-btn {
     background: #0f172a;
     border: 1px solid var(--border);
     color: var(--text);
     font-family: 'Syne', sans-serif;
-    font-size: 14px;
-    padding: 12px 16px;
+    font-size: 15px;
+    padding: 14px 18px;
     border-radius: 10px;
     cursor: pointer;
     text-align: left;
@@ -290,113 +190,182 @@
     align-items: center;
     gap: 12px;
   }
+
   .option-btn:hover:not(:disabled) {
     border-color: var(--accent);
     background: #00d4ff0a;
     transform: translateX(4px);
   }
+
   .option-btn .opt-letter {
     font-family: 'Space Mono', monospace;
-    font-size: 11px;
+    font-size: 12px;
     color: var(--muted);
     background: var(--border);
-    width: 24px; height: 24px;
-    border-radius: 5px;
+    width: 26px; height: 26px;
+    border-radius: 6px;
     display: flex; align-items: center; justify-content: center;
     flex-shrink: 0;
     transition: all 0.2s;
   }
-  .option-btn.correct { border-color: var(--green); background: #10b98115; color: var(--green); }
+
+  .option-btn.correct {
+    border-color: var(--green);
+    background: #10b98115;
+    color: var(--green);
+  }
   .option-btn.correct .opt-letter { background: var(--green); color: #fff; }
-  .option-btn.wrong { border-color: var(--red); background: #ef444415; color: var(--red); }
+
+  .option-btn.wrong {
+    border-color: var(--red);
+    background: #ef444415;
+    color: var(--red);
+  }
   .option-btn.wrong .opt-letter { background: var(--red); color: #fff; }
+
   .option-btn:disabled { cursor: default; }
+
   .feedback {
-    margin-top: 12px;
-    padding: 11px 14px;
+    margin-top: 14px;
+    padding: 12px 16px;
     border-radius: 8px;
-    font-size: 13px;
+    font-size: 14px;
     display: none;
   }
+
   .feedback.show { display: block; }
   .feedback.correct-fb { background: #10b98115; border: 1px solid #10b98144; color: var(--green); }
   .feedback.wrong-fb { background: #ef444415; border: 1px solid #ef444444; color: #fca5a5; }
+
   .next-btn {
-    margin-top: 16px;
+    margin-top: 18px;
     background: linear-gradient(135deg, var(--accent), var(--accent2));
     border: none;
     color: #fff;
     font-family: 'Space Mono', monospace;
-    font-size: 12px;
-    padding: 11px 26px;
+    font-size: 13px;
+    padding: 12px 28px;
     border-radius: 8px;
     cursor: pointer;
     letter-spacing: 1px;
     display: none;
     transition: opacity 0.2s;
   }
+
   .next-btn:hover { opacity: 0.85; }
   .next-btn.show { display: inline-block; }
 
-  /* RESULT */
+  /* RESULTS SCREEN */
   .result-card {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 16px;
-    padding: 32px;
+    padding: 36px;
     text-align: center;
-    margin-bottom: 14px;
+    margin-bottom: 16px;
   }
+
   .score-circle {
-    width: 110px; height: 110px;
+    width: 120px; height: 120px;
     border-radius: 50%;
     background: conic-gradient(var(--accent) calc(var(--pct) * 1%), var(--border) 0%);
     display: flex; align-items: center; justify-content: center;
-    margin: 0 auto 18px;
+    margin: 0 auto 20px;
     position: relative;
   }
+
   .score-circle::before {
     content: '';
     position: absolute;
-    width: 80px; height: 80px;
+    width: 88px; height: 88px;
     background: var(--card);
     border-radius: 50%;
   }
+
   .score-inner {
     position: relative;
     font-family: 'Space Mono', monospace;
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 700;
     color: var(--accent);
     z-index: 1;
   }
-  .result-title { font-size: 22px; font-weight: 800; margin-bottom: 6px; }
-  .result-sub { color: var(--muted); font-size: 13px; margin-bottom: 20px; }
+
+  .result-title {
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+
+  .result-sub {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
   .result-stats {
     display: flex;
     justify-content: center;
-    gap: 16px;
+    gap: 24px;
     flex-wrap: wrap;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
   }
+
   .stat-box {
     background: #0f172a;
     border: 1px solid var(--border);
     border-radius: 10px;
-    padding: 12px 18px;
+    padding: 14px 20px;
     text-align: center;
   }
-  .stat-val { font-family: 'Space Mono', monospace; font-size: 20px; font-weight: 700; }
-  .stat-lbl { font-size: 11px; color: var(--muted); margin-top: 2px; }
-  .saved-notice {
-    background: #10b98115;
-    border: 1px solid #10b98133;
-    color: var(--green);
-    border-radius: 8px;
-    padding: 10px 16px;
-    font-size: 13px;
-    margin-bottom: 14px;
+
+  .stat-val {
+    font-family: 'Space Mono', monospace;
+    font-size: 22px;
+    font-weight: 700;
   }
+
+  .stat-lbl {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  .name-input-wrap {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  .name-input {
+    background: #0f172a;
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: 'Syne', sans-serif;
+    font-size: 15px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    outline: none;
+    width: 200px;
+    transition: border-color 0.2s;
+  }
+
+  .name-input:focus { border-color: var(--accent); }
+
+  .save-btn {
+    background: linear-gradient(135deg, var(--green), #059669);
+    border: none;
+    color: #fff;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    letter-spacing: 1px;
+  }
+
   .restart-btn {
     background: transparent;
     border: 1px solid var(--border);
@@ -409,193 +378,181 @@
     letter-spacing: 1px;
     transition: all 0.2s;
   }
+
   .restart-btn:hover { border-color: var(--accent); color: var(--accent); }
 
-  /* LEADERBOARD SIDEBAR */
+  /* LEADERBOARD */
   .lb-card {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 16px;
-    padding: 20px;
-    margin-bottom: 14px;
+    padding: 24px;
+    margin-bottom: 16px;
   }
+
   .lb-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 16px;
-  }
-  .lb-title { font-size: 16px; font-weight: 800; }
-  .lb-count {
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    color: var(--muted);
-    background: #0f172a;
-    border: 1px solid var(--border);
-    padding: 3px 8px;
-    border-radius: 6px;
-  }
-  .clear-btn {
-    background: transparent;
-    border: 1px solid #ef444433;
-    color: var(--red);
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    padding: 4px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  .lb-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 12px;
-    border-radius: 8px;
-    margin-bottom: 6px;
-    background: #0f172a;
-    border: 1px solid var(--border);
-    transition: all 0.3s;
-    animation: slideIn 0.3s ease;
-  }
-  @keyframes slideIn {
-    from { opacity: 0; transform: translateY(6px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .lb-row.rank-1 { border-color: var(--gold); background: #f59e0b08; }
-  .lb-row.rank-2 { border-color: var(--silver); background: #94a3b808; }
-  .lb-row.rank-3 { border-color: var(--bronze); background: #d9770608; }
-  .lb-row.is-me { border-color: var(--accent2) !important; background: #7c3aed0d !important; }
-  .rank-badge {
-    font-family: 'Space Mono', monospace;
-    font-size: 12px;
-    font-weight: 700;
-    width: 28px;
-    text-align: center;
-    flex-shrink: 0;
-  }
-  .rank-1 .rank-badge { color: var(--gold); }
-  .rank-2 .rank-badge { color: var(--silver); }
-  .rank-3 .rank-badge { color: var(--bronze); }
-  .lb-row:not(.rank-1):not(.rank-2):not(.rank-3) .rank-badge { color: var(--muted); }
-  .lb-name {
-    flex: 1;
-    font-weight: 600;
-    font-size: 14px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .lb-name .you-tag {
-    font-size: 9px;
-    font-family: 'Space Mono', monospace;
-    background: var(--accent2);
-    color: #fff;
-    padding: 1px 5px;
-    border-radius: 4px;
-    margin-left: 4px;
-    vertical-align: middle;
-  }
-  .lb-score-wrap { display: flex; flex-direction: column; align-items: flex-end; gap: 1px; }
-  .lb-score {
-    font-family: 'Space Mono', monospace;
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--accent);
-  }
-  .lb-meta { font-size: 10px; color: var(--muted); }
-  .empty-lb { text-align: center; padding: 30px 16px; color: var(--muted); font-size: 13px; }
-  .empty-lb span { font-size: 32px; display: block; margin-bottom: 8px; }
-  .refresh-note {
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    color: var(--muted);
-    text-align: center;
-    margin-top: 10px;
-    letter-spacing: 0.5px;
+    margin-bottom: 20px;
   }
 
-  /* FULL LEADERBOARD TAB */
-  .full-lb-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 24px;
-    margin-bottom: 14px;
-    max-width: 700px;
-    width: 100%;
+  .lb-title {
+    font-size: 20px;
+    font-weight: 800;
   }
-  .full-lb-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  .full-lb-title { font-size: 20px; font-weight: 800; }
-  .full-lb-actions { display: flex; gap: 8px; align-items: center; }
-  .refresh-btn {
+
+  .clear-btn {
     background: transparent;
-    border: 1px solid var(--border);
-    color: var(--muted);
+    border: 1px solid #ef444444;
+    color: var(--red);
     font-family: 'Space Mono', monospace;
     font-size: 10px;
     padding: 5px 12px;
     border-radius: 6px;
     cursor: pointer;
     letter-spacing: 1px;
-    transition: all 0.2s;
   }
-  .refresh-btn:hover { border-color: var(--accent); color: var(--accent); }
-  .full-lb-row {
+
+  .lb-row {
     display: flex;
     align-items: center;
     gap: 14px;
-    padding: 14px 16px;
+    padding: 12px 16px;
     border-radius: 10px;
     margin-bottom: 8px;
     background: #0f172a;
     border: 1px solid var(--border);
+    transition: all 0.2s;
     animation: slideIn 0.3s ease;
   }
-  .full-lb-row.rank-1 { border-color: var(--gold); background: #f59e0b08; }
-  .full-lb-row.rank-2 { border-color: var(--silver); background: #94a3b808; }
-  .full-lb-row.rank-3 { border-color: var(--bronze); background: #d9770608; }
-  .full-lb-row.is-me { border-color: var(--accent2) !important; background: #7c3aed0d !important; }
-  .full-rank-badge {
+
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .lb-row.rank-1 { border-color: var(--gold); background: #f59e0b08; }
+  .lb-row.rank-2 { border-color: var(--silver); background: #94a3b808; }
+  .lb-row.rank-3 { border-color: var(--bronze); background: #d9770608; }
+
+  .rank-badge {
     font-family: 'Space Mono', monospace;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
-    width: 34px;
+    width: 32px;
     text-align: center;
     flex-shrink: 0;
   }
-  .full-lb-row.rank-1 .full-rank-badge { color: var(--gold); }
-  .full-lb-row.rank-2 .full-rank-badge { color: var(--silver); }
-  .full-lb-row.rank-3 .full-rank-badge { color: var(--bronze); }
-  .full-lb-row:not(.rank-1):not(.rank-2):not(.rank-3) .full-rank-badge { color: var(--muted); }
-  .full-lb-name { flex: 1; font-weight: 600; font-size: 16px; }
-  .full-lb-score {
+
+  .rank-1 .rank-badge { color: var(--gold); }
+  .rank-2 .rank-badge { color: var(--silver); }
+  .rank-3 .rank-badge { color: var(--bronze); }
+  .lb-row:not(.rank-1):not(.rank-2):not(.rank-3) .rank-badge { color: var(--muted); }
+
+  .lb-name {
+    flex: 1;
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  .lb-score-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+  }
+
+  .lb-score {
     font-family: 'Space Mono', monospace;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     color: var(--accent);
   }
-  .full-lb-meta { font-size: 12px; color: var(--muted); text-align: right; margin-top: 2px; }
-  .player-count-bar {
+
+  .lb-meta {
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  .empty-lb {
+    text-align: center;
+    padding: 40px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  .empty-lb span {
+    font-size: 36px;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  /* START SCREEN */
+  .start-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 40px;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .start-icon {
+    font-size: 52px;
+    margin-bottom: 16px;
+  }
+
+  .start-title {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #00d4ff, #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .start-desc {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 28px;
+    line-height: 1.6;
+  }
+
+  .info-pills {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+
+  .pill {
     background: #0f172a;
     border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 12px 16px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 16px;
-    font-size: 13px;
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
   }
-  .pc-dot { width:10px; height:10px; background: var(--green); border-radius:50%; animation: pulse 1.4s infinite; }
-  .pc-text { color: var(--muted); }
-  .pc-num { font-family: 'Space Mono', monospace; color: var(--green); font-weight: 700; }
+
+  .start-btn {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border: none;
+    color: #fff;
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    padding: 14px 36px;
+    border-radius: 10px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+
+  .start-btn:hover { opacity: 0.9; transform: scale(1.02); }
 </style>
 </head>
 <body>
@@ -603,217 +560,192 @@
 <header>
   <div class="badge">☁️ BEGINNER LEVEL</div>
   <h1>Cloud & DevOps Quiz</h1>
-  <p>Compete with everyone — live leaderboard updates as people finish</p>
-  <div class="live-dot">LIVE LEADERBOARD</div>
+  <p>Test your fundamentals — 10 quick questions</p>
 </header>
 
 <div class="tabs">
-  <button class="tab-btn active" id="tab-quiz" onclick="showTab('quiz')">🎯 Quiz</button>
-  <button class="tab-btn" id="tab-lb" onclick="showTab('leaderboard')">🏆 Leaderboard</button>
+  <button class="tab-btn active" onclick="showTab('quiz')">🎯 Quiz</button>
+  <button class="tab-btn" onclick="showTab('leaderboard')">🏆 Leaderboard</button>
 </div>
 
-<!-- QUIZ TAB -->
+<!-- QUIZ SCREEN -->
 <div id="quiz-screen" class="screen active">
-  <div class="main-layout">
 
-    <!-- LEFT: QUIZ -->
-    <div class="quiz-col">
-
-      <!-- ENTER NAME -->
-      <div id="enter-view">
-        <div class="enter-card">
-          <div class="enter-icon">👤</div>
-          <div class="enter-title">Enter Your Name to Join</div>
-          <p class="enter-desc">Anyone can join from this page. Your score will appear on the shared leaderboard visible to all players in real time.</p>
-          <div class="name-row">
-            <input class="big-name-input" id="player-name-input" type="text" placeholder="Your name..." maxlength="20"
-              onkeydown="if(event.key==='Enter') joinQuiz()">
-            <button class="join-btn" onclick="joinQuiz()">JOIN →</button>
-          </div>
-          <div class="info-pills">
-            <span class="pill">10 QUESTIONS</span>
-            <span class="pill">15s PER Q</span>
-            <span class="pill">SHARED BOARD</span>
-            <span class="pill">TIMED</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- QUESTION -->
-      <div id="question-view" style="display:none;">
-        <div class="quiz-card">
-          <div class="player-chip" id="player-chip">👤 Player</div>
-          <div class="progress-bar-wrap">
-            <div class="progress-bar-fill" id="progress-fill" style="width:0%"></div>
-          </div>
-          <div class="q-meta">
-            <span class="q-num" id="q-num">Q 1 / 10</span>
-            <span class="q-timer" id="q-timer">⏱ 15s</span>
-          </div>
-          <div class="q-text" id="q-text"></div>
-          <div class="options" id="options"></div>
-          <div class="feedback" id="feedback"></div>
-          <button class="next-btn" id="next-btn" onclick="nextQuestion()">NEXT →</button>
-        </div>
-      </div>
-
-      <!-- RESULTS -->
-      <div id="result-view" style="display:none;">
-        <div class="result-card">
-          <div class="score-circle" id="score-circle">
-            <div class="score-inner" id="score-text">0/10</div>
-          </div>
-          <div class="result-title" id="result-title">Well Done!</div>
-          <div class="result-sub" id="result-sub">Here's how you did</div>
-          <div class="result-stats">
-            <div class="stat-box">
-              <div class="stat-val" id="stat-correct" style="color:var(--green)">0</div>
-              <div class="stat-lbl">Correct</div>
-            </div>
-            <div class="stat-box">
-              <div class="stat-val" id="stat-wrong" style="color:var(--red)">0</div>
-              <div class="stat-lbl">Wrong</div>
-            </div>
-            <div class="stat-box">
-              <div class="stat-val" id="stat-points" style="color:var(--gold)">0</div>
-              <div class="stat-lbl">Points</div>
-            </div>
-          </div>
-          <div class="saved-notice" id="saved-notice" style="display:none;">✅ Score saved to leaderboard!</div>
-          <button class="restart-btn" onclick="restartQuiz()">↺ PLAY AGAIN</button>
-        </div>
-      </div>
-
-    </div><!-- /quiz-col -->
-
-    <!-- RIGHT: LIVE SIDEBAR LEADERBOARD -->
-    <div class="lb-sidebar">
-      <div class="lb-card">
-        <div class="lb-header">
-          <div class="lb-title">🏆 Live Rankings</div>
-          <div style="display:flex;gap:6px;align-items:center;">
-            <span class="lb-count" id="lb-count">0 players</span>
-            <button class="clear-btn" onclick="clearLeaderboard()">CLEAR</button>
-          </div>
-        </div>
-        <div id="lb-sidebar-list"></div>
-        <div class="refresh-note" id="refresh-note">auto-refreshes every 5s</div>
-      </div>
+  <!-- Start -->
+  <div id="start-view" class="start-card">
+    <div class="start-icon">🚀</div>
+    <div class="start-title">Ready to Launch?</div>
+    <p class="start-desc">
+      10 beginner-friendly questions covering Cloud Computing basics and DevOps concepts. Each question is timed — answer quickly for a higher score!
+    </p>
+    <div class="info-pills">
+      <span class="pill">10 QUESTIONS</span>
+      <span class="pill">15s PER Q</span>
+      <span class="pill">BEGINNER</span>
+      <span class="pill">TIMED</span>
     </div>
-
+    <button class="start-btn" onclick="startQuiz()">START QUIZ →</button>
   </div>
+
+  <!-- Question -->
+  <div id="question-view" style="display:none;">
+    <div class="quiz-card">
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-fill" id="progress-fill" style="width:0%"></div>
+      </div>
+      <div class="q-meta">
+        <span class="q-num" id="q-num">Q 1 / 10</span>
+        <span class="q-timer" id="q-timer">⏱ 15s</span>
+      </div>
+      <div class="q-text" id="q-text"></div>
+      <div class="options" id="options"></div>
+      <div class="feedback" id="feedback"></div>
+      <button class="next-btn" id="next-btn" onclick="nextQuestion()">NEXT →</button>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div id="result-view" style="display:none;">
+    <div class="result-card">
+      <div class="score-circle" id="score-circle">
+        <div class="score-inner" id="score-text">0/10</div>
+      </div>
+      <div class="result-title" id="result-title">Well Done!</div>
+      <div class="result-sub" id="result-sub">Here's how you did</div>
+      <div class="result-stats">
+        <div class="stat-box">
+          <div class="stat-val" id="stat-correct" style="color:var(--green)">0</div>
+          <div class="stat-lbl">Correct</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val" id="stat-wrong" style="color:var(--red)">0</div>
+          <div class="stat-lbl">Wrong</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val" id="stat-points" style="color:var(--gold)">0</div>
+          <div class="stat-lbl">Points</div>
+        </div>
+      </div>
+      <p style="color:var(--muted);font-size:13px;margin-bottom:14px;">Save your score to the leaderboard!</p>
+      <div class="name-input-wrap">
+        <input class="name-input" id="player-name" type="text" placeholder="Enter your name..." maxlength="20">
+        <button class="save-btn" onclick="saveScore()">SAVE 🏆</button>
+      </div>
+      <button class="restart-btn" onclick="restartQuiz()">↺ TRY AGAIN</button>
+    </div>
+  </div>
+
 </div>
 
-<!-- LEADERBOARD TAB -->
-<div id="leaderboard-screen" class="screen" style="display:flex;flex-direction:column;align-items:center;">
-  <div class="full-lb-card">
-    <div class="full-lb-header">
-      <div class="full-lb-title">🏆 Full Leaderboard</div>
-      <div class="full-lb-actions">
-        <button class="refresh-btn" onclick="renderFullLeaderboard()">↻ REFRESH</button>
-        <button class="clear-btn" style="font-size:10px;padding:5px 12px;" onclick="clearLeaderboard()">CLEAR ALL</button>
-      </div>
+<!-- LEADERBOARD SCREEN -->
+<div id="leaderboard-screen" class="screen">
+  <div class="lb-card">
+    <div class="lb-header">
+      <div class="lb-title">🏆 Top Players</div>
+      <button class="clear-btn" onclick="clearLeaderboard()">CLEAR ALL</button>
     </div>
-    <div class="player-count-bar">
-      <div class="pc-dot"></div>
-      <span class="pc-text">Players on board:</span>
-      <span class="pc-num" id="full-player-count">0</span>
-    </div>
-    <div id="lb-full-list"></div>
+    <div id="lb-list"></div>
   </div>
 </div>
 
 <script>
-// ─── DATA ────────────────────────────────────────────────────────────────────
 const QUESTIONS = [
-  { q:"What does AWS stand for?", opts:["Advanced Web Services","Amazon Web Services","Automated Web System","Azure Web Services"], ans:1, exp:"AWS stands for Amazon Web Services — Amazon's cloud platform." },
-  { q:"Which of the following is a cloud service provider?", opts:["Google Cloud","GitHub","Docker","Jenkins"], ans:0, exp:"Google Cloud is a cloud provider. GitHub, Docker, Jenkins are developer tools." },
-  { q:"What does CI/CD stand for in DevOps?", opts:["Code Integration / Code Delivery","Continuous Integration / Continuous Delivery","Cloud Infrastructure / Cloud Deployment","Central Integration / Central Deployment"], ans:1, exp:"CI/CD = Continuous Integration / Continuous Delivery — a core DevOps practice." },
-  { q:"What is Docker primarily used for?", opts:["Hosting websites","Containerizing applications","Managing cloud costs","Version control"], ans:1, exp:"Docker packages apps into containers so they run consistently anywhere." },
-  { q:"Which cloud model lets you rent computing without managing hardware?", opts:["Private Cloud","On-Premise","Public Cloud","Hybrid Cloud"], ans:2, exp:"Public Cloud (AWS, Azure, GCP) lets you rent resources over the internet." },
-  { q:"What does IaC stand for in DevOps?", opts:["Integration and Coding","Infrastructure as Code","Internet and Cloud","Iteration as Committed"], ans:1, exp:"IaC = Infrastructure as Code — managing infra using config files." },
-  { q:"Which tool is commonly used for version control in DevOps?", opts:["Kubernetes","Git","Ansible","Terraform"], ans:1, exp:"Git is the most widely used version control system." },
-  { q:"What is the main purpose of a Load Balancer?", opts:["Store data in the cloud","Distribute traffic across servers","Monitor application logs","Deploy Docker containers"], ans:1, exp:"A Load Balancer distributes traffic across servers for high availability." },
-  { q:"Which of the following is an AWS storage service?", opts:["EC2","S3","Lambda","RDS"], ans:1, exp:"S3 (Simple Storage Service) is AWS's object storage." },
-  { q:"What does 'scaling horizontally' mean in cloud computing?", opts:["Adding more RAM to one server","Replacing old servers with faster ones","Adding more servers to handle load","Reducing cloud spending"], ans:2, exp:"Horizontal scaling = adding more server instances to share the load." }
+  {
+    q: "What does AWS stand for?",
+    opts: ["Advanced Web Services", "Amazon Web Services", "Automated Web System", "Azure Web Services"],
+    ans: 1,
+    exp: "AWS stands for Amazon Web Services — Amazon's cloud platform."
+  },
+  {
+    q: "Which of the following is an example of a cloud service provider?",
+    opts: ["Google Cloud", "GitHub", "Docker", "Jenkins"],
+    ans: 0,
+    exp: "Google Cloud is a cloud service provider. GitHub, Docker, and Jenkins are developer tools."
+  },
+  {
+    q: "What does CI/CD stand for in DevOps?",
+    opts: ["Code Integration / Code Delivery", "Continuous Integration / Continuous Delivery", "Cloud Infrastructure / Cloud Deployment", "Central Integration / Central Deployment"],
+    ans: 1,
+    exp: "CI/CD stands for Continuous Integration / Continuous Delivery — a key DevOps practice."
+  },
+  {
+    q: "What is Docker primarily used for?",
+    opts: ["Hosting websites", "Containerizing applications", "Managing cloud costs", "Version control"],
+    ans: 1,
+    exp: "Docker is used to package applications into containers, making them easy to run anywhere."
+  },
+  {
+    q: "Which cloud model lets you rent computing power without managing hardware?",
+    opts: ["Private Cloud", "On-Premise", "Public Cloud", "Hybrid Cloud"],
+    ans: 2,
+    exp: "Public Cloud (like AWS, Azure, GCP) lets you rent resources over the internet without owning hardware."
+  },
+  {
+    q: "What does IaC stand for in DevOps?",
+    opts: ["Integration and Coding", "Infrastructure as Code", "Internet and Cloud", "Iteration as Committed"],
+    ans: 1,
+    exp: "IaC stands for Infrastructure as Code — managing servers and infra using config files."
+  },
+  {
+    q: "Which tool is commonly used for version control in DevOps pipelines?",
+    opts: ["Kubernetes", "Git", "Ansible", "Terraform"],
+    ans: 1,
+    exp: "Git is the most widely used version control system in DevOps workflows."
+  },
+  {
+    q: "What is the main purpose of a Load Balancer?",
+    opts: ["Store data in the cloud", "Distribute traffic across servers", "Monitor application logs", "Deploy Docker containers"],
+    ans: 1,
+    exp: "A Load Balancer distributes incoming traffic across multiple servers to ensure high availability."
+  },
+  {
+    q: "Which of the following is an AWS storage service?",
+    opts: ["EC2", "S3", "Lambda", "RDS"],
+    ans: 1,
+    exp: "S3 (Simple Storage Service) is AWS's object storage service."
+  },
+  {
+    q: "What does 'scaling horizontally' mean in cloud computing?",
+    opts: ["Adding more RAM to one server", "Replacing old servers with faster ones", "Adding more servers to handle load", "Reducing cloud spending"],
+    ans: 2,
+    exp: "Horizontal scaling means adding more server instances to handle increased load — opposite of vertical scaling."
+  }
 ];
 
-const STORAGE_KEY = 'cloudquiz-leaderboard-v2';
+let current = 0;
+let score = 0;
+let points = 0;
+let timeLeft = 15;
+let timer = null;
+let answered = false;
 
-// ─── STATE ───────────────────────────────────────────────────────────────────
-let playerName = '';
-let current = 0, score = 0, points = 0;
-let timeLeft = 15, timer = null, answered = false;
-let lbPollInterval = null;
-
-// ─── TABS ────────────────────────────────────────────────────────────────────
 function showTab(tab) {
-  document.getElementById('tab-quiz').classList.toggle('active', tab === 'quiz');
-  document.getElementById('tab-lb').classList.toggle('active', tab === 'leaderboard');
+  document.querySelectorAll('.tab-btn').forEach((b, i) => {
+    b.classList.toggle('active', (i === 0 && tab === 'quiz') || (i === 1 && tab === 'leaderboard'));
+  });
   document.getElementById('quiz-screen').classList.toggle('active', tab === 'quiz');
   document.getElementById('leaderboard-screen').classList.toggle('active', tab === 'leaderboard');
-  document.getElementById('leaderboard-screen').style.display = tab === 'leaderboard' ? 'flex' : 'none';
-  if (tab === 'leaderboard') renderFullLeaderboard();
+  if (tab === 'leaderboard') renderLeaderboard();
 }
 
-// ─── SHARED STORAGE ──────────────────────────────────────────────────────────
-async function getBoard() {
-  try {
-    const res = await window.storage.get(STORAGE_KEY, true);
-    return res ? JSON.parse(res.value) : [];
-  } catch { return []; }
-}
-
-async function saveBoard(board) {
-  await window.storage.set(STORAGE_KEY, JSON.stringify(board), true);
-}
-
-async function addToBoard(entry) {
-  const board = await getBoard();
-  // Remove old entry for same name (keep best score if replaying)
-  const existing = board.findIndex(e => e.name.toLowerCase() === entry.name.toLowerCase());
-  if (existing !== -1) {
-    if (entry.points > board[existing].points) board.splice(existing, 1);
-    else return; // don't overwrite better score
-  }
-  board.push(entry);
-  board.sort((a,b) => b.points - a.points || b.score - a.score);
-  await saveBoard(board.slice(0, 50));
-}
-
-async function clearLeaderboard() {
-  if (confirm('Clear all leaderboard entries for everyone?')) {
-    await saveBoard([]);
-    renderSidebarLeaderboard();
-    renderFullLeaderboard();
-  }
-}
-
-// ─── JOIN ─────────────────────────────────────────────────────────────────────
-function joinQuiz() {
-  const val = document.getElementById('player-name-input').value.trim();
-  if (!val) { document.getElementById('player-name-input').focus(); return; }
-  playerName = val;
-  document.getElementById('enter-view').style.display = 'none';
+function startQuiz() {
+  document.getElementById('start-view').style.display = 'none';
   document.getElementById('question-view').style.display = 'block';
-  document.getElementById('player-chip').textContent = '👤 ' + playerName;
   current = 0; score = 0; points = 0;
   showQuestion();
-  startLbPoll();
 }
 
-// ─── QUIZ LOGIC ───────────────────────────────────────────────────────────────
 function showQuestion() {
   answered = false;
   const q = QUESTIONS[current];
-  document.getElementById('q-num').textContent = `Q ${current+1} / 10`;
-  document.getElementById('progress-fill').style.width = `${(current/10)*100}%`;
+  document.getElementById('q-num').textContent = `Q ${current + 1} / 10`;
+  document.getElementById('progress-fill').style.width = `${(current / 10) * 100}%`;
   document.getElementById('q-text').textContent = q.q;
 
-  const letters = ['A','B','C','D'];
+  const letters = ['A', 'B', 'C', 'D'];
   const optsEl = document.getElementById('options');
   optsEl.innerHTML = '';
-  q.opts.forEach((opt,i) => {
+  q.opts.forEach((opt, i) => {
     const btn = document.createElement('button');
     btn.className = 'option-btn';
     btn.innerHTML = `<span class="opt-letter">${letters[i]}</span> ${opt}`;
@@ -822,6 +754,7 @@ function showQuestion() {
   });
 
   document.getElementById('feedback').className = 'feedback';
+  document.getElementById('feedback').textContent = '';
   document.getElementById('next-btn').className = 'next-btn';
   startTimer();
 }
@@ -835,7 +768,10 @@ function startTimer() {
     updateTimerDisplay();
     if (timeLeft <= 0) {
       clearInterval(timer);
-      if (!answered) { answered = true; revealAnswer(-1); }
+      if (!answered) {
+        answered = true;
+        revealAnswer(-1);
+      }
     }
   }, 1000);
 }
@@ -855,18 +791,20 @@ function selectAnswer(idx) {
 
 function revealAnswer(selected) {
   const q = QUESTIONS[current];
-  document.querySelectorAll('.option-btn').forEach((btn,i) => {
+  const btns = document.querySelectorAll('.option-btn');
+  btns.forEach((btn, i) => {
     btn.disabled = true;
     if (i === q.ans) btn.classList.add('correct');
     else if (i === selected && selected !== q.ans) btn.classList.add('wrong');
   });
+
   const fb = document.getElementById('feedback');
   if (selected === q.ans) {
     score++;
     const bonus = Math.max(1, timeLeft);
     points += 10 + bonus;
     fb.className = 'feedback correct-fb show';
-    fb.textContent = `✅ Correct! +${10+bonus} pts — ${q.exp}`;
+    fb.textContent = `✅ Correct! +${10 + bonus} pts  — ${q.exp}`;
   } else if (selected === -1) {
     fb.className = 'feedback wrong-fb show';
     fb.textContent = `⏰ Time's up! — ${q.exp}`;
@@ -874,117 +812,86 @@ function revealAnswer(selected) {
     fb.className = 'feedback wrong-fb show';
     fb.textContent = `❌ Wrong! — ${q.exp}`;
   }
+
   document.getElementById('next-btn').className = 'next-btn show';
 }
 
 function nextQuestion() {
   current++;
-  if (current >= QUESTIONS.length) showResults();
-  else showQuestion();
+  if (current >= QUESTIONS.length) {
+    showResults();
+  } else {
+    showQuestion();
+  }
 }
 
-async function showResults() {
-  clearInterval(lbPollInterval);
+function showResults() {
   document.getElementById('question-view').style.display = 'none';
   document.getElementById('result-view').style.display = 'block';
 
-  const pct = (score/10)*100;
+  const pct = (score / 10) * 100;
   document.getElementById('score-circle').style.setProperty('--pct', pct);
   document.getElementById('score-text').textContent = `${score}/10`;
   document.getElementById('stat-correct').textContent = score;
-  document.getElementById('stat-wrong').textContent = 10-score;
+  document.getElementById('stat-wrong').textContent = 10 - score;
   document.getElementById('stat-points').textContent = points;
-  document.getElementById('progress-fill').style.width = '100%';
 
-  const titles = [
-    [10,'🎉 Perfect Score!','You nailed every question!'],
-    [8,'🌟 Excellent!','Great cloud knowledge!'],
-    [6,'👍 Good Job!','Solid fundamentals!'],
-    [4,'📚 Keep Learning!','Review the basics and try again.'],
-    [0,'🚀 Just Getting Started!','Read up on Cloud & DevOps basics!']
-  ];
-  const [,title,sub] = titles.find(([t]) => score >= t);
+  let title, sub;
+  if (score === 10) { title = '🎉 Perfect Score!'; sub = 'You nailed every question!'; }
+  else if (score >= 8) { title = '🌟 Excellent!'; sub = 'Great cloud knowledge!'; }
+  else if (score >= 6) { title = '👍 Good Job!'; sub = 'Solid fundamentals!'; }
+  else if (score >= 4) { title = '📚 Keep Learning!'; sub = 'Review the basics and try again.'; }
+  else { title = '🚀 Just Getting Started!'; sub = 'Read up on Cloud & DevOps basics!'; }
+
   document.getElementById('result-title').textContent = title;
   document.getElementById('result-sub').textContent = sub;
+  document.getElementById('progress-fill').style.width = '100%';
+}
 
-  // Auto-save to shared leaderboard
-  await addToBoard({ name: playerName, score, points, date: new Date().toLocaleDateString() });
-  document.getElementById('saved-notice').style.display = 'block';
-  renderSidebarLeaderboard();
+function saveScore() {
+  const name = document.getElementById('player-name').value.trim();
+  if (!name) { alert('Please enter your name!'); return; }
+
+  const board = JSON.parse(localStorage.getItem('cloudQuizBoard') || '[]');
+  board.push({ name, score, points, date: new Date().toLocaleDateString() });
+  board.sort((a, b) => b.points - a.points || b.score - a.score);
+  const top10 = board.slice(0, 10);
+  localStorage.setItem('cloudQuizBoard', JSON.stringify(top10));
+
+  showTab('leaderboard');
+}
+
+function renderLeaderboard() {
+  const board = JSON.parse(localStorage.getItem('cloudQuizBoard') || '[]');
+  const el = document.getElementById('lb-list');
+  if (board.length === 0) {
+    el.innerHTML = `<div class="empty-lb"><span>🏆</span>No scores yet!<br>Complete the quiz to appear here.</div>`;
+    return;
+  }
+  const medals = ['🥇', '🥈', '🥉'];
+  el.innerHTML = board.map((p, i) => `
+    <div class="lb-row rank-${i + 1 <= 3 ? i + 1 : 'n'}">
+      <div class="rank-badge">${i < 3 ? medals[i] : `#${i + 1}`}</div>
+      <div class="lb-name">${p.name}</div>
+      <div class="lb-score-wrap">
+        <div class="lb-score">${p.points} pts</div>
+        <div class="lb-meta">${p.score}/10 correct · ${p.date}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function clearLeaderboard() {
+  if (confirm('Clear all leaderboard entries?')) {
+    localStorage.removeItem('cloudQuizBoard');
+    renderLeaderboard();
+  }
 }
 
 function restartQuiz() {
   document.getElementById('result-view').style.display = 'none';
-  document.getElementById('enter-view').style.display = 'block';
-  document.getElementById('player-name-input').value = '';
-  playerName = '';
+  document.getElementById('start-view').style.display = 'block';
 }
-
-// ─── LEADERBOARD RENDERS ──────────────────────────────────────────────────────
-async function renderSidebarLeaderboard() {
-  const board = await getBoard();
-  const el = document.getElementById('lb-sidebar-list');
-  const countEl = document.getElementById('lb-count');
-  countEl.textContent = `${board.length} player${board.length !== 1 ? 's' : ''}`;
-
-  if (board.length === 0) {
-    el.innerHTML = `<div class="empty-lb"><span>🏆</span>No scores yet.<br>Be the first!</div>`;
-    return;
-  }
-
-  const medals = ['🥇','🥈','🥉'];
-  el.innerHTML = board.slice(0,10).map((p,i) => {
-    const isMe = p.name.toLowerCase() === playerName.toLowerCase();
-    const rankClass = i < 3 ? `rank-${i+1}` : '';
-    return `
-      <div class="lb-row ${rankClass} ${isMe ? 'is-me' : ''}">
-        <div class="rank-badge">${i < 3 ? medals[i] : `#${i+1}`}</div>
-        <div class="lb-name">${escHtml(p.name)}${isMe ? '<span class="you-tag">YOU</span>' : ''}</div>
-        <div class="lb-score-wrap">
-          <div class="lb-score">${p.points}pts</div>
-          <div class="lb-meta">${p.score}/10</div>
-        </div>
-      </div>`;
-  }).join('');
-}
-
-async function renderFullLeaderboard() {
-  const board = await getBoard();
-  const el = document.getElementById('lb-full-list');
-  document.getElementById('full-player-count').textContent = board.length;
-
-  if (board.length === 0) {
-    el.innerHTML = `<div class="empty-lb"><span>🏆</span>No scores yet.<br>Complete the quiz to appear here!</div>`;
-    return;
-  }
-
-  const medals = ['🥇','🥈','🥉'];
-  el.innerHTML = board.map((p,i) => {
-    const isMe = p.name.toLowerCase() === playerName.toLowerCase();
-    const rankClass = i < 3 ? `rank-${i+1}` : '';
-    return `
-      <div class="full-lb-row ${rankClass} ${isMe ? 'is-me' : ''}">
-        <div class="full-rank-badge">${i < 3 ? medals[i] : `#${i+1}`}</div>
-        <div class="full-lb-name">${escHtml(p.name)}${isMe ? '<span class="you-tag" style="font-size:10px;background:var(--accent2);color:#fff;padding:1px 6px;border-radius:4px;margin-left:6px;font-family:Space Mono,monospace;">YOU</span>' : ''}</div>
-        <div style="text-align:right;">
-          <div class="full-lb-score">${p.points} pts</div>
-          <div class="full-lb-meta">${p.score}/10 correct · ${p.date}</div>
-        </div>
-      </div>`;
-  }).join('');
-}
-
-function startLbPoll() {
-  renderSidebarLeaderboard();
-  lbPollInterval = setInterval(renderSidebarLeaderboard, 5000);
-}
-
-function escHtml(str) {
-  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-
-// Initial load
-renderSidebarLeaderboard();
 </script>
 </body>
 </html>
